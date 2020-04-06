@@ -4,17 +4,17 @@
 
 ### Features
 
-	- Real time chat engine for command
-	- Blog
-	- Portfolio
-	- Drag & Drop interface
+- Real time chat engine for command
+- Blog
+- Portfolio
+- Drag & Drop interface
 
 ### Code Example
 
-	```ruby
-	def my_function
+```ruby
+def my_function
 	puts "This is my function"
-	end
-	```
+end
+```
 
 	
