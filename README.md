@@ -1,8 +1,8 @@
 # Dev Portfolio Application
 
-This is rails 6 application.
+> This is rails 6 application.
 
-### Features:
+### Features
 
 	- Real time chat engine for command
 	- Blog
