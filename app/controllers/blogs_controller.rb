@@ -4,8 +4,12 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
+    binding.pry
     @blogs = Blog.all
-  end
+    binding.pry
+    @blogs = Blog.limit(2)
+    binding.pry
+  end 
 
   # GET /blogs/1
   # GET /blogs/1.json
