@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_22_011646) do
+ActiveRecord::Schema.define(version: 2020_04_23_062347) do
 
   create_table "blogs", force: :cascade do |t|
     t.string "title"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2020_04_22_011646) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "slug"
     t.integer "status", default: 0
+    t.integer "section_id"
+    t.index ["section_id"], name: "index_blogs_on_section_id"
     t.index ["slug"], name: "index_blogs_on_slug", unique: true
   end
 
@@ -32,6 +34,12 @@ ActiveRecord::Schema.define(version: 2020_04_22_011646) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "sections", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "skills", force: :cascade do |t|
     t.string "title"
     t.integer "percent"
@@ -39,4 +47,11 @@ ActiveRecord::Schema.define(version: 2020_04_22_011646) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "topics", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "blogs", "sections"
 end
