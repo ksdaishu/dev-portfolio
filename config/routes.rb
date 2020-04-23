@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :portfolios, expect: [:show,:edit]
+  get 'rubyonrails', to: 'portfolios#rubyonrails'
   get 'aishu/:id', to: 'portfolios#show' , as: 'portfolio_show'
   get 'aishu/:id/edit', to: 'portfolios#edit' , as: 'portfolio_edit'
 
