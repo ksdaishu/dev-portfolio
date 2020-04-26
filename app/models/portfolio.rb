@@ -1,4 +1,5 @@
 class Portfolio < ApplicationRecord
+	has_many :Technologies
 	include Placeholder
 	validates :title, presence: true
 	validates :body, presence: 
