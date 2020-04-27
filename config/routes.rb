@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :portfolios, expect: [:show,:edit]
   get 'rubyonrails', to: 'portfolios#rubyonrails'
   get 'aishu/:id', to: 'portfolios#show' , as: 'portfolio_show'
