@@ -1,4 +1,5 @@
 class PortfoliosController < ApplicationController
+	access all: [:show, :index, :rubyonrails], user: {except: [:destroy, :edit, :update, :create]}, site_admin: :all
 	layout "portfolios"
 	def index
 		@portfolio_items = Portfolio.all
