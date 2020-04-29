@@ -1,4 +1,5 @@
 class BlogsController < ApplicationController
+  layout "blogs"
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
 
   # GET /blogs
@@ -10,6 +11,8 @@ class BlogsController < ApplicationController
   # GET /blogs/1
   # GET /blogs/1.json
   def show
+    @page_title =  @blog.title
+    @seo_keywords = @blog.body
   end
 
   # GET /blogs/new
@@ -25,6 +28,7 @@ class BlogsController < ApplicationController
   # POST /blogs.json
   def create
     @blog = Blog.new(blog_params)
+    @blog.section_id = 1
 
     respond_to do |format|
       if @blog.save
