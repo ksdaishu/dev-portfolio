@@ -15,18 +15,26 @@
 
   <body>
     
-    
-     <%= render 'shared/nav', location: 'top' %>
+    <div class="site-wrapper">
 
-    <%= login_helper %>
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+     <%= render 'shared/application_nav', location: 'top' %>
+
+   
 
     <%= yield %>
-
-    <hr>
-
-    <%= @copyrigth %>
+  
+   <%= render 'shared/application_footer', location: 'top' %>
+    
 
     <%= source_helper("application") %>
 
+        </div>
+
+      </div>
+
+    </div>
   </body>
 </html>
